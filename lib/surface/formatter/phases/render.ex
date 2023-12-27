@@ -130,7 +130,7 @@ defmodule Surface.Formatter.Phases.Render do
 
             string ->
               string
-              |> String.slice(1..-2)
+              |> String.slice(1..-2//1)
               |> String.trim()
           end
 
