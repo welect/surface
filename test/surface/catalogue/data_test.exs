@@ -173,8 +173,8 @@ defmodule Surface.Catalogue.DataTest do
       {[cards_1, cards_2], [%{cards: updated_cards_1}, %{cards: updated_cards_2}]} =
         Data.get_and_update(lists[_].cards[1..2], &{&1, %{&1 | text: "#{&1.text} (updated)"}})
 
-      assert cards_1 == Enum.at(lists, 0).cards |> Enum.slice(1..2)
-      assert cards_2 == Enum.at(lists, 1).cards |> Enum.slice(1..2)
+      assert cards_1 == Enum.at(lists, 0).cards |> Enum.slice(1..2//1)
+      assert cards_2 == Enum.at(lists, 1).cards |> Enum.slice(1..2//1)
 
       assert [
                %{id: "Card_1", text: "Fix bug #1"},
